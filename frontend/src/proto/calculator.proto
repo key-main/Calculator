@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package calculator.v1;
+
+// option go_package = "Calculator/backend/gen/calculator/v1";
+
+message CalculateRequest {
+  float a = 1;
+  float b = 2;
+  Operator operator = 3;
+}
+
+message CalculateResponse {
+  float result = 1;
+}
+
+enum Operator {
+  OPERATOR_ADD = 0;
+  OPERATOR_SUBTRACT = 1;
+  OPERATOR_MULTIPLY = 2;
+  OPERATOR_DIVIDE = 3;
+}
+
+service CalculatorService {
+  rpc Calculate(CalculateRequest) returns (CalculateResponse) {}
+}

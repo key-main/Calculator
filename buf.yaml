@@ -1,0 +1,11 @@
+version: v1
+deps:
+  - buf.build/connectrpc/connect-go  # 显式声明依赖
+  - buf.build/connectrpc/connect-web  # 直接声明前端插件依赖
+  - buf.build/connectrpc/connect      # 基础库依赖
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
